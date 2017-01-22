@@ -46,7 +46,11 @@ See URL `https://github.com/shyiko/ktlint'."
   ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
   :modes kotlin-mode)
 
-(add-to-list 'flycheck-checkers 'kotlin-ktlint)
+
+;;;###autoload
+(defun flycheck-kotlin-setup ()
+  "Setup Flycheck for Kotlin."
+  (add-to-list 'flycheck-checkers 'kotlin-ktlint))
 
 (provide 'flycheck-kotlin)
 ;;; flycheck-kotlin.el ends here
