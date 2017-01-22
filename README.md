@@ -22,7 +22,9 @@ Then, in your `init.el`:
 
 ```lisp
 (eval-after-load 'flycheck
-  '(require 'flycheck-kotlin))
+  (progn
+    (require 'flycheck-kotlin)
+    (flycheck-kotlin-setup)))
 ```
 
 Make sure that the `ktlint` binary is present on Emacs' `exec-path`.
