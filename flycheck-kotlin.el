@@ -5,7 +5,7 @@
 ;; Author: Elric Milon <whirm_REMOVETHIS__@gmx.com>
 ;; Created: 20 January 2017
 ;; Version: 0.1
-;; Package-Requires: ((flycheck "0.18"))
+;; Package-Requires: ((flycheck "0.20"))
 
 ;;; Commentary:
 
@@ -41,10 +41,11 @@
 (flycheck-define-checker kotlin-ktlint
   "A Kotlin syntax and style checker using the ktlint utility.
 See URL `https://github.com/shyiko/ktlint'."
-  :command ("ktlint" source-inplace)
+  :command ("ktlint" source-original)
   :error-patterns
   ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
-  :modes kotlin-mode)
+  :modes kotlin-mode
+  :predicate flycheck-buffer-saved-p)
 
 
 ;;;###autoload
