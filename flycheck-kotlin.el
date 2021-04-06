@@ -41,12 +41,11 @@
 (flycheck-define-checker kotlin-ktlint
   "A Kotlin syntax and style checker using the ktlint utility.
 See URL `https://github.com/shyiko/ktlint'."
-  :command ("ktlint" source-original)
+  :command ("ktlint" "--stdin")
   :error-patterns
-  ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
+  ((error line-start "<stdin>:" line ":" column ": " (message) line-end))
   :modes kotlin-mode
-  :predicate flycheck-buffer-saved-p)
-
+  :standard-input t)
 
 ;;;###autoload
 (defun flycheck-kotlin-setup ()
