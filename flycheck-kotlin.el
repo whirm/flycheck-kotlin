@@ -44,7 +44,7 @@ See URL `https://github.com/shyiko/ktlint'."
   :command ("ktlint" "--stdin")
   :error-patterns
   ((error line-start "<stdin>:" line ":" column ": " (message) line-end))
-  :modes kotlin-mode
+  :modes (kotlin-mode kotlin-ts-mode)
   :standard-input t)
 
 ;;;###autoload
