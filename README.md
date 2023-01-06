@@ -22,7 +22,7 @@ Then, in your `init.el`:
 
 ```lisp
 (eval-after-load 'flycheck
-  (progn
+  '(progn
     (require 'flycheck-kotlin)
     (flycheck-kotlin-setup)))
 ```
